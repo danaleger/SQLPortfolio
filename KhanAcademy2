@@ -1,0 +1,25 @@
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, cost_to_manufacture INTEGER, quantity INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "sun dress", 50, 20, 5);
+INSERT INTO clothing_store VALUES (2, "maxi skirt", 25, 10, 7);
+INSERT INTO clothing_store VALUES (3, "boyfriend jeans", 80, 40, 10);
+INSERT INTO clothing_store VALUES (4, "jeggings", 65, 30, 8);
+INSERT INTO clothing_store VALUES (5, "slim boot jeans", 70, 35, 9);
+INSERT INTO clothing_store VALUES (6, "black harper top", 40, 20, 5);
+INSERT INTO clothing_store VALUES (7, "pink harper top", 40, 20, 5);
+INSERT INTO clothing_store VALUES (8, "wirefree bra", 50, 35, 6);
+INSERT INTO clothing_store VALUES (9, "flip flops", 20, 10, 10);
+INSERT INTO clothing_store VALUES (10, "high heels", 40, 20, 5);
+INSERT INTO clothing_store VALUES (11, "bralette", 25, 10, 12);
+INSERT INTO clothing_store VALUES (12, "cami", 15, 7, 10);
+INSERT INTO clothing_store VALUES (13, "sweater", 50, 35, 14);
+INSERT INTO clothing_store VALUES (14, "cheeky panty", 15, 5, 14);
+INSERT INTO clothing_store VALUES (15, "purse", 50, 25, 4);
+
+SELECT name, price FROM clothing_store ORDER BY price ASC;
+
+SELECT name, quantity FROM clothing_store ORDER BY quantity DESC;
+
+SELECT quantity, price FROM clothing_store GROUP BY price ORDER BY price ASC;
+
+SELECT name, price, cost_to_manufacture FROM clothing_store ORDER BY price - cost_to_manufacture ASC;
