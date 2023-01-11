@@ -1,0 +1,14 @@
+CREATE TABLE Books (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+
+INSERT into Books VALUES (1, "Educated", 10);
+INSERT into Books VALUES (2, "Good and Mad", 10);
+INSERT into Books VALUES (3, "Capitalism Vs the Climate", 9);
+INSERT into Books VALUES (4, "It Ends With Us", 9);
+INSERT into Books VALUES (5, "Girl Logic", 9.5);
+INSERT into Books VALUES (6, "The Happy Isles of Oceania", 8);
+INSERT into Books VALUES (7, "Istanbul", 7.5);
+INSERT into Books VALUES (8, "Harry Potter and the Half-Blood Prince", 9);
+INSERT into Books VALUES (9, "The Alchemist", 9.5);
+INSERT into Books VALUES (10, "Allegiant", 8);
+
+SELECT * from Books;
