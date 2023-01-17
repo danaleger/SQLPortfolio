@@ -1,0 +1,42 @@
+CREATE TABLE famous_people
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER);
+    
+INSERT INTO famous_people (name, age) VALUES ("Ryan Gosling", 42);
+INSERT INTO famous_people (name, age) VALUES ("Rachel McAdams", 44);
+INSERT INTO famous_people (name, age) VALUES ("Sandra Bullock", 58);
+INSERT INTO famous_people (name, age) VALUES ("Emma Stone", 34);
+
+CREATE TABLE movies
+    (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    person_id INTEGER,
+    name TEXT);
+    
+INSERT INTO movies (person_id, name) VALUES (1, "The Notebook"); INSERT INTO movies (person_id, name) VALUES (1, "La La Land"); 
+INSERT INTO movies (person_id, name) VALUES (2, "The Notebook"); INSERT INTO movies (person_id, name) VALUES (2, "Mean Girls");
+INSERT INTO movies (person_id, name) VALUES (3, "Miss Congeniality");
+INSERT INTO movies (person_id, name) VALUES (3, "The Proposal");
+INSERT INTO movies (person_id, name) VALUES (4, "La La Land");
+INSERT INTO movies (person_id, name) VALUES (4, "Easy A");
+
+CREATE TABLE friends
+    (id INTEGER, 
+    friends_id INTEGER);
+    
+INSERT INTO friends (id, friends_id) VALUES (1, 2);
+INSERT INTO friends (id, friends_id) VALUES (1, 4);
+INSERT INTO friends (id, friends_id) VALUES (2, 3);
+INSERT INTO friends (id, friends_id) VALUES (3, 4);
+
+SELECT famous_people.name, movies.name
+    FROM movies
+    JOIN famous_people
+    ON famous_people.id = movies.person_id;
+    
+SELECT famous_people.name, famous_friends.name
+    FROM friends
+    JOIN famous_people
+    ON famous_people.id = friends.id
+    JOIN famous_people famous_friends
+    ON famous_friends.id = friends.friends_id;
